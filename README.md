@@ -1,1 +1,1 @@
-https://faVnItKaIsy.github.io//Melody-Game-New-Year/
+https://faVnItKaIsy.github.io//Guess-The-Melody-Game-New-Year/
