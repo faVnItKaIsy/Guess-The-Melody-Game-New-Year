@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Mark Script'; 
+    src: url(./markscript/marckscript.ttf); 
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Mark Script';
+    background-image: url(./img/фон.png);
+    background-size: cover; /* Гарантирует, что фоновое изображение покрывает все тело. */
+    background-repeat: no-repeat; /*Предотвращает повторение фонового изображения. */
+}
+
+h3{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top:20%;
+    left: 25%;  
+}
+
+/*гирлянда*/
+#gir {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image:url('./img/гирлянда.png');
+    height: 62px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}  
+.gir_1 {
+    background-position: 0 1px
+}  
+.gir_2 {
+    background-position: 0 -63px
+}  
+.gir_3 {
+    background-position: 0 -124px
+}
+
+
+#background_author {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    margin: 15px;
+}
+
+.backgroundStart img{
+    position: absolute; 
+    background-attachment: fixed;/*чтобы не прокручивалось*/
+    background-position: 50% 50%;
+    display: block;
+    z-index: 1; 
+    width: 100%;
+    height: auto;
+   object-fit: fill;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.start {
+    padding-top: 15%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* название на гл странице*/
+#pTitle {
+    
+    font-size: 40px;
+    z-index: 2;
+    color: white;
+    margin-bottom: 5px;
+}
+
+#pTitleGame {
+   /* color:linear-gradient(#ffffff, #000dc2); */
+   background: linear-gradient(0deg, #ffffff 33%, #a1b4ff 66%);
+   -webkit-background-clip:text;
+   -webkit-text-fill-color: transparent;
+   /*color: #0B2349;*/
+   width:100%;/*не дает обрезать текст*/
+   text-align:center;
+   font-size: 70px;
+    z-index: 2;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* стартовая кнопка */
+#buttonStart {
+    font-family: 'Mark Script';
+    font-size: 20px;
+    z-index: 2;
+    color: white;
+    background-color: #005EDB;
+    border: 1.5px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 210px;
+    transition: background-color 1s ease, transform 0.5s ease-in-out; 
+}
+
+#buttonStart:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #061b92;
+}
+
+.containerModal{
+     display: none;
+}
+
+
+/* модальное окно */
+#modalStart {
+   
+    line-height: 1.3;
+    position: absolute;
+    font-family: 'Mark Script';
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    padding: 30px;
+    background-color: #010B53;
+    z-index: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1.5px solid white;
+    transform: translate(-50%, -50%); 
+}
+
+/* модальная кнопка */
+#modalButton {
+    margin-top: 30px;
+    font-family: 'Mark Script';
+    font-size: 20px;
+    z-index: 2;
+    color: white;
+    background-color: #005EDB;
+    border: 1.5px solid white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 180px;
+    transition: background-color 1s ease, transform 0.5s ease-in-out; 
+}
+
+#modalButton:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #061b92;
+}
+
+
+#music_level_1, #music_level_2,
+#music_level_3, #music_level_4,
+#music_level_5, #music_level_6,
+#music_level_7, #music_level_8,
+#music_level_9, #music_level_10{
+    display: flex;
+    
+    flex-direction: column;
+     align-items: center;
+    justify-content: center; 
+    align-self: center;
+    display: none;
+}
+#music1_1, #music1_2, #music1_3,
+#music2_1, #music2_2, #music2_3,
+#music3_1, #music3_2, #music3_3,
+#music4_1, #music4_2, #music4_3,
+#music5_1, #music5_2, #music5_3,
+#music6_1, #music6_2, #music6_3,
+#music7_1, #music7_2, #music7_3,
+#music8_1, #music8_2, #music8_3,
+#music9_1, #music9_2, #music9_3,
+#music10_1, #music10_2, #music10_3{
+ margin-bottom: 30px;   
+}
+.musicBut{
+    cursor: pointer;
+    font-family: 'Mark Script';
+    font-size: 20px;
+    margin: 10px;
+    color: white;
+    background-color: #005EDB;
+    border: 0.1px solid white;
+    box-shadow: 0 4px 12px rgba(0, 8, 92, 0.676), 0 16px 20px rgba(67, 92, 232, 0.566);
+    border-radius: 20px;
+    padding: 10px 20px;
+    padding: 10px;
+    height: 70px;
+    width: 210px;
+    transition: background-color 1s ease, transform 0.5s ease-in-out; 
+}
+
+.containerMusic{
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Button_musics{
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.musics{
+    margin-top: 30px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.but_start_pause{
+    box-shadow: 0 4px 12px rgba(0, 8, 92, 0.676), 0 12px 20px rgba(67, 92, 232, 0.566);
+    background-color: #005EDB;
+    border: none;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
+.start_pause_music{
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+
+#start1, #start2, #start3, #start4,
+#start5, #start6, #start7, #start8,
+#start9, #start10{
+    display: block;
+}
+#pause1, #pause2, #pause3, #pause4,
+#pause5, #pause6, #pause7, #pause8,
+#pause9, #pause10{
+    display: none;
+}
+
+
+/*когда отгадали, прав.ответ*/
+.great{
+    margin-top: 20%;
+    transition: transform 1s;
+    transform: scale(2);
+    border: 1px solid rgb(0, 255, 51);
+}
+/*когда отгадали, не прав.ответ*/
+.great_not_the_right_answer{
+    display: none;
+    margin-bottom: 30px;
+}
+
+
+/*когда ошиблись, не прав.ответ*/
+.error{
+    border: 1px solid red;
+}
+
+/*когда ошиблись, прав.ответ*/
+.error_right_answer:disabled{
+    margin: 10px;
+    transition: transform 1s;
+    transform: scale(1.2);
+    border: 1px solid rgb(0, 255, 51);
+}
+
+
+.next_level{
+    cursor: pointer;
+    font-family: 'Mark Script';
+    font-size: 20px;
+    margin: 10px;
+    color: #005EDB;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 8, 92, 0.676), 0 12px 20px rgba(3, 12, 64, 0.566);
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 210px;
+    transition: background-color 1s ease;
+    display: none;
+}
+.next_level_error{
+    display: block;
+    margin-left: 35%;
+}
+
+.next_level:hover{
+    cursor: pointer;
+    background-color: #061b92;
+    color: #ffffff;
+}
+
+.finish{
+    margin-top: 200px;
+    /* height: 200px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container_finish{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+h2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    /* top:35%;
+    left: 45%;   */
+}
+
+#balls{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+}
+
+
+.btn-reload{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Mark Script';
+
+    color: #005EDB;
+    background-color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 8, 92, 0.676), 0 12px 20px rgba(3, 12, 64, 0.566);
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 210px;
+    transition: background-color 1s ease;
+    display: none;
+}
+
+.btn-reload:hover{
+    cursor: pointer;
+    background-color: #061b92;
+    color: #ffffff;
+}
+
+@media (min-width: 1100px) {
+    .Button_musics{
+        margin-top: 300px;
+    }
+    
+  }

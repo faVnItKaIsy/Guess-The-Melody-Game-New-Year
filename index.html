@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script/jquery-3.6.0.slim.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+   <div class="backgroundStart">
+        <img src="./img/b.png" alt="">
+        <div class="start">
+            <p id="pTitle">Новогодняя игра</p>
+            <p id="pTitleGame">Угадай мелодию</p>
+            <button id="buttonStart">Играть</button>
+        </div>
+    </div>
+<div class="containerModal">
+    <div id="modalStart">
+        
+        <p>Приветствую!</p>
+        <p>Представляю Вам свою игру “Угадай мелодию”. Правила просты и понятны. Необходимо прослушать мелодию и одгадать ее название. Уровни начнуться от самого легкого, до сложного. Но не отчаивайтесь и не унывайте, если не угадаете, праздничное настроение всё равно останется с Вами!</p>
+        <p>Приятной игры!</p>
+        
+            <button id="modalButton">Начать</button>
+    </div>
+</div>
+
+
+<div class="containerMusic">
+
+
+    <!-- <script type='text/javascript' src='http://mvcreative.ru/example/6/1/snow.js'></script>  -->
+<!-- <script type='text/javascript'> 
+var aaSnowConfig = {snowflakes: '200'}; 
+</script> -->
+
+<!-- <audio id="myAudio" src="./мелодии/прав_ответ.mp3" preload="auto"> -->
+    
+    <!-- гирлянда -->
+    <div class="gir_1" id="gir"></div>
+
+    <audio id="error_answer" src="./мелодии/не_прав_ответ.mp3" preload="auto">
+    </audio>
+    <audio id="right_answer" src="./мелодии/прав_ответ.mp3" preload="auto">
+    </audio>
+
+    
+    <!-- ------------------1 уровень--------------------------- -->
+    <div id="music_level_1">
+        <h3>1 уровень</h3>
+        <div class="Button_musics">
+            <!-- кнопка старта и паузы -->
+            <button class="but_start_pause" onclick="func_start_pause_1()" id="start1">
+                <img class="start_pause_music" src="./img/запуск.png" alt="">
+            </button>
+            <button class="but_start_pause" onclick="func_start_pause_1()" id="pause1">
+                <img class="start_pause_music" src="./img/пауза.png" alt="">
+            </button>
+        </div>
+
+
+        <audio id="myAudio_1" src="./мелодии/В_лесу_родилась_елочка.mp3" preload="auto">
+        </audio>
+        <audio id="myAudio_1_after" src="./мелодии/После_ответа_В_лесу_родилась_елочка.mp3" preload="auto">
+        </audio>
+
+        <!-- варианты 1 уровень  2-->
+        <div class="musics">
+            <button class="musicBut" id="music1_1">Маленькой елочке холодно зимой</button>
+            <button class="musicBut" id="music1_2">В лесу родилась ёлочка</button>
+            <button class="musicBut" id="music1_3">Новогодняя-Дискотека Авария</button>
+        </div>
+        <!-- кнопка на след уровень -->
+        <button class="next_level" id="next_level_1_2">Следующий уровень</button>
+
+    </div>
+
+    <!-- ------------------2 уровень--------------------------- -->
+    <div id="music_level_2">
+        <h3>2 уровень</h3>
+        <div class="Button_musics">
+            <!-- кнопка старта и паузы -->
+            <button class="but_start_pause" onclick="func_start_pause_2()" id="start2">
+                <img class="start_pause_music" src="./img/запуск.png" alt="">
+            </button>
+            <button class="but_start_pause" onclick="func_start_pause_2()" id="pause2">
+                <img class="start_pause_music" src="./img/пауза.png" alt="">
+            </button>
+        </div>
+
+
+        <audio id="myAudio_2" src="./мелодии/Расскажи_снегурочка_фрагмент.mp3" preload="auto">
+        </audio>
+        <audio id="myAudio_2_after" src="./мелодии/После_ответа_Расскажи_снегурочка.mp3" preload="auto">
+        </audio>
+
+        <!-- варианты 2 уровень  3-->
+    <div class="musics">
+        <button class="musicBut" id="music2_1">Маленькой елочке холодно зимой</button>
+        <button class="musicBut" id="music2_2">Песня о снежинке</button>
+        <button class="musicBut" id="music2_3">Расскажи снегурочка, где была</button>
+    </div>
+    <!-- кнопка на след уровень -->
+    <!-- <button class="next_level" onclick="next_level_2()" id="next_level_2_3">Следующий уровень</button> -->
+    <button class="next_level" id="next_level_2_3">Следующий уровень</button>
+    </div>
+
+
+
+    <!-- ------------------3 уровень--------------------------- -->
+    <div id="music_level_3">
+        <h3>3 уровень</h3>
+        <div class="Button_musics">
+            <!-- кнопка старта и паузы -->
+            <button class="but_start_pause" onclick="func_start_pause_3()" id="start3">
+                <img class="start_pause_music" src="./img/запуск.png" alt="">
+            </button>
+            <button class="but_start_pause" onclick="func_start_pause_3()" id="pause3">
+                <img class="start_pause_music" src="./img/пауза.png" alt="">
+            </button>
+        </div>
+
+
+        <audio id="myAudio_3" src="./мелодии/Кабы_не_было_зимы.mp3" preload="auto">
+        </audio>
+        <audio id="myAudio_3_after" src="./мелодии/После_ответа_Кабы_не_было_зимы.mp3" preload="auto">
+        </audio>
+
+        <!-- варианты 3 уровень  3-->
+    <div class="musics">
+        <button class="musicBut" id="music3_1">Новогодние игрушки</button>
+        <button class="musicBut" id="music3_2">Ёлочка-ёлка</button>
+        <button class="musicBut" id="music3_3">Кабы не было зимы</button>
+    </div>
+    <!-- кнопка на след уровень -->
+    <!-- <button class="next_level" onclick="next_level_2()" id="next_level_2_3">Следующий уровень</button> -->
+    <button class="next_level" id="next_level_3_4">Следующий уровень</button>
+    </div>
+
+    <!-- ------------------4 уровень--------------------------- -->
+    <div id="music_level_4">
+        <h3>4 уровень</h3>
+        <div class="Button_musics">
+            <!-- кнопка старта и паузы -->
+            <button class="but_start_pause" onclick="func_start_pause_4()" id="start4">
+                <img class="start_pause_music" src="./img/запуск.png" alt="">
+            </button>
+            <button class="but_start_pause" onclick="func_start_pause_4()" id="pause4">
+                <img class="start_pause_music" src="./img/пауза.png" alt="">
+            </button>
+        </div>
+
+
+        <audio id="myAudio_4" src="./мелодии/Маленькой_елочке_холодно_зимой.mp3" preload="auto">
+        </audio>
+        <audio id="myAudio_4_after" src="./мелодии/После_ответа_маленькой_елочке.mp3" preload="auto">
+        </audio>
+
+        <!-- варианты 4 уровень  1-->
+        <div class="musics">
+            <button class="musicBut" id="music4_1">Маленькой елочке холодно зимой</button>
+            <button class="musicBut" id="music4_2">Новогодние игрушки</button>
+            <button class="musicBut" id="music4_3">Снежинка(Пока часы 12 бьют)</button>
+        </div>
+    <!-- кнопка на след уровень -->
+    <!-- <button class="next_level" onclick="next_level_2()" id="next_level_2_3">Следующий уровень</button> -->
+    <button class="next_level" id="next_level_4_5">Следующий уровень</button>
+    </div>
+
+
+    <!-- ------------------5 уровень--------------------------- -->
+    <div id="music_level_5">
+        <h3>5 уровень</h3>
+        <div class="Button_musics">
+            <!-- кнопка старта и паузы -->
+            <button class="but_start_pause" onclick="func_start_pause_5()" id="start5">
+                <img class="start_pause_music" src="./img/запуск.png" alt="">
+            </button>
+            <button class="but_start_pause" onclick="func_start_pause_5()" id="pause5">
+                <img class="start_pause_music" src="./img/пауза.png" alt="">
+            </button>
+        </div>
+
+        <audio id="myAudio_5" src="./мелодии/Новогодняя-Дискотека Авария.mp3" preload="auto">
+        </audio>
+        <audio id="myAudio_5_after" src="./мелодии/После_ответа_Новогодняя.mp3" preload="auto">
+        </audio>
+
+        <!-- варианты 5 уровень  3-->
+        <div class="musics">
+            <button class="musicBut" id="music5_1">Новогодние игрушки</button>
+            <button class="musicBut" id="music5_2">Три белых коня</button>
+            <button class="musicBut" id="music5_3">Новогодняя-Дискотека Авария</button>
+        </div>
+    <!-- кнопка на след уровень -->
+    <button class="next_level" id="next_level_5_6">Следующий уровень</button>
+    </div>
+
+    
+<!-- ------------------6 уровень--------------------------- -->
+    <div id="music_level_6">
+        <h3>6 уровень</h3>
+        <div class="Button_musics">
+            <!-- кнопка старта и паузы -->
+            <button class="but_start_pause" onclick="func_start_pause_6()" id="start6">
+                <img class="start_pause_music" src="./img/запуск.png" alt="">
+            </button>
+            <button class="but_start_pause" onclick="func_start_pause_6()" id="pause6">
+                <img class="start_pause_music" src="./img/пауза.png" alt="">
+            </button>
+        </div>
+        
+        <audio id="myAudio_6" src="./мелодии/Снежинка(Пока_часы_12_бьют).mp3" preload="auto">
+        </audio>
+        <audio id="myAudio_6_after" src="./мелодии/После_ответа_Пока_часы_12_бьют.mp3" preload="auto">
+        </audio>
+
+        <!-- варианты 6 уровень  2-->
+        <div class="musics">
+            <button class="musicBut" id="music6_1">Ёлочка-ёлка</button>
+            <button class="musicBut" id="music6_2">Снежинка<br>(Пока_часы_12_бьют)</button>
+            <button class="musicBut" id="music6_3">Потолок ледяной, дверь скрипучая</button>
+        </div>
+    <!-- кнопка на след уровень -->
+    <button class="next_level" id="next_level_6_7">Следующий уровень</button>
+    </div>
+
+
+    <!-- ------------------7 уровень--------------------------- -->
+    <div id="music_level_7">
+        <h3>7 уровень</h3>
+        <div class="Button_musics">
+            <!-- кнопка старта и паузы -->
+            <button class="but_start_pause" onclick="func_start_pause_7()" id="start7">
+                <img class="start_pause_music" src="./img/запуск.png" alt="">
+            </button>
+            <button class="but_start_pause" onclick="func_start_pause_7()" id="pause7">
+                <img class="start_pause_music" src="./img/пауза.png" alt="">
+            </button>
+        </div>
+        
+        <audio id="myAudio_7" src="./мелодии/Зима-холода.mp3" preload="auto">
+        </audio>
+        <audio id="myAudio_7_after" src="./мелодии/После_ответа_зима-холода.mp3" preload="auto">
+        </audio>
+
+        <!-- варианты 7 уровень  2-->
+        <div class="musics">
+            <button class="musicBut" id="music7_1">Ёлки</button>
+            <button class="musicBut" id="music7_2">Зима-холода</button>
+            <button class="musicBut" id="music7_3">Звенит январская вьюга</button>
+        </div>
+    <!-- кнопка на след уровень -->
+    <button class="next_level" id="next_level_7_8">Следующий уровень</button>
+    </div>
+
+
+    <!-- ------------------8 уровень--------------------------- -->
+    <div id="music_level_8">
+        <h3>8 уровень</h3>
+        <div class="Button_musics">
+            <!-- кнопка старта и паузы -->
+            <button class="but_start_pause" onclick="func_start_pause_8()" id="start8">
+                <img class="start_pause_music" src="./img/запуск.png" alt="">
+            </button>
+            <button class="but_start_pause" onclick="func_start_pause_8()" id="pause8">
+                <img class="start_pause_music" src="./img/пауза.png" alt="">
+            </button>
+        </div>
+        
+        <audio id="myAudio_8" src="./мелодии/Потолок_ледяной.mp3" preload="auto">
+        </audio>
+        <audio id="myAudio_8_after" src="./мелодии/После_ответа_Потолок_ледяной.mp3" preload="auto">
+        </audio>
+
+        <!-- варианты 8 уровень  1-->
+        <div class="musics">
+            <button class="musicBut" id="music8_1">Потолок ледяной, дверь скрипучая</button>
+            <button class="musicBut" id="music8_2">Новогодние игрушки</button>
+            <button class="musicBut" id="music8_3">Новый год</button>
+        </div>
+    <!-- кнопка на след уровень -->
+    <button class="next_level" id="next_level_8_9">Следующий уровень</button>
+    </div>
+
+
+    <!-- ------------------9 уровень--------------------------- -->
+    <div id="music_level_9">
+        <h3>9 уровень</h3>
+        <div class="Button_musics">
+            <!-- кнопка старта и паузы -->
+            <button class="but_start_pause" onclick="func_start_pause_9()" id="start9">
+                <img class="start_pause_music" src="./img/запуск.png" alt="">
+            </button>
+            <button class="but_start_pause" onclick="func_start_pause_9()" id="pause9">
+                <img class="start_pause_music" src="./img/пауза.png" alt="">
+            </button>
+        </div>
+        
+        <audio id="myAudio_9" src="./мелодии/Три_белых_коня.mp3" preload="auto">
+        </audio>
+        <audio id="myAudio_9_after" src="./мелодии/После_ответа_Три_белых_коня.mp3" preload="auto">
+        </audio>
+
+        <!-- варианты 9 уровень  2-->
+        <div class="musics">
+            <button class="musicBut" id="music9_1">Новый год</button>
+            <button class="musicBut" id="music9_2">Три белых коня</button>
+            <button class="musicBut" id="music9_3">Новогодние игрушки</button>
+        </div>
+    <!-- кнопка на след уровень -->
+    <button class="next_level" id="next_level_9_10">Следующий уровень</button>
+    </div>
+
+<!-- ------------------10 уровень--------------------------- -->
+    <div id="music_level_10">
+        <h3>10 уровень</h3>
+        <div class="Button_musics">
+            <!-- кнопка старта и паузы -->
+            <button class="but_start_pause" onclick="func_start_pause_10()" id="start10">
+                <img class="start_pause_music" src="./img/запуск.png" alt="">
+            </button>
+            <button class="but_start_pause" onclick="func_start_pause_10()" id="pause10">
+                <img class="start_pause_music" src="./img/пауза.png" alt="">
+            </button>
+        </div>
+        
+        <audio id="myAudio_10" src="./мелодии/Звенит_январская_вьюга.mp3" preload="auto">
+        </audio>
+        <audio id="myAudio_10_after" src="./мелодии/После_ответа_январская_вьюга.mp3" preload="auto">
+        </audio>
+
+        <!-- варианты 10 уровень  3-->
+        <div class="musics">
+            <button class="musicBut" id="music10_1">Ёлки</button>
+            <button class="musicBut" id="music10_2">Последний час декабря</button>
+            <button class="musicBut" id="music10_3">Звенит январская вьюга</button>
+        </div>
+    <!-- кнопка на след уровень -->
+    <button class="next_level" id="next_level_10">Следующий уровень</button>
+    </div>
+ 
+</div>
+<div class="finish">
+    <div class="container_finish">
+        <h2>Поздравляю! Вы прошли игру!</h2>
+        <p id="balls">Вы получили</p>
+    </div>
+    <div class="btn-reload">
+        Заново
+        <div class="btn-ripple"></div>
+    </div>
+</div>
+
+    
+
+
+
+
+
+
+
+    <span id="background_author">Адмакина Виктория</span>
+    <script src="./script/script.js"></script> 
+</body>
+</html>
